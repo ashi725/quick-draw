@@ -98,7 +98,7 @@ public class StatsController {
 
   @FXML
   private void onBadgeEight() {
-    txtBadgeDescription.setText("Win with less than 5 seconds left on the clock");
+    txtBadgeDescription.setText("Win in under 30 seconds");
   }
 
   /**
@@ -272,6 +272,6 @@ public class StatsController {
     String time = jsonParser.getProperty(App.getCurrentUser(), "fastestTime").toString();
     int fastest = Integer.parseInt(time);
 
-    return fastest <= 5 && fastest != 0;
+    return fastest < 30 && fastest != 0;
   }
 }
